@@ -1,5 +1,5 @@
  <div class="container">
-        <a class="student-card d-flex flex-column p-3 font-exo blue-white-gradient-bg" *ngFor="let student of students" (click)="goToParticularStudent(student.id)">
+        <a class="student-card d-flex p-3 font-exo blue-white-gradient-bg" *ngFor="let student of students" (click)="goToParticularStudent(student.id)">
            <h2 class="name">{{student.name}}</h2>
            <p class="status" [ngStyle]="{'font-size':'1.1rem'}">Status:<i [ngStyle]="{'color':student.feesStatus=='paid'?' rgb(35, 198, 35)':'red','font-weight':'bold'}">{{student.feesStatus}}</i></p> 
     </a>

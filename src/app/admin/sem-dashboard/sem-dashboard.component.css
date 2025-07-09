@@ -1,10 +1,5 @@
-/* *{
-    font-family:"Exo 2", sans-serif;
-    color: rgb(61, 61, 61);
-} */
+
 .sem-card{
-    border: 2px solid rgb(255, 255, 255);
-    /* background:  linear-gradient(to bottom right, rgb(255, 205, 212),rgb(239, 207, 255)); */
     width: 30%;
     height: 200px;
     border-radius: 1rem;
@@ -15,6 +10,7 @@
     cursor:pointer;
 }
 .sem-card:hover {
+    color: black;
     transition: transform 0.3s ease-out ;
       transform: scale(1.1);
 }
