@@ -1,0 +1,33 @@
+*{
+    font-family:"Exo 2", sans-serif;
+    color: rgb(61, 61, 61);
+}
+.student-card{
+    border: 2px solid rgb(255, 255, 255);
+    background:  linear-gradient(to bottom right,white,rgb(90, 219, 255),white);
+    width: 25%;
+    height: 150px;
+    border-radius: 1rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-right: 0.1rem;
+    text-decoration: none;
+    cursor:pointer;
+}
+.student-card h2{
+    font-size: 1.8rem;
+}
+.student-card:hover {
+    transition: transform 0.3s ease-out ;
+      transform: scale(1.1);
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: space-around;
+}
+.status{
+   display: flex;
+  justify-content: flex-end;
+
+}
