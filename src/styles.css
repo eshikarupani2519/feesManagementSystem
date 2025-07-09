@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.blue-white-gradient-bg{
+    background:  linear-gradient(to bottom right,white,rgb(133, 229, 255),white);
+    box-shadow: 5px 5px 5px rgb(159, 159, 159);
+}
+.font-exo{
+    font-family:"Exo 2", sans-serif;
+    color: rgb(61, 61, 61);
+}

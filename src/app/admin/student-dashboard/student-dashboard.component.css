@@ -1,10 +1,10 @@
-*{
+/* *{
     font-family:"Exo 2", sans-serif;
     color: rgb(61, 61, 61);
-}
+} */
 .student-card{
     border: 2px solid rgb(255, 255, 255);
-    background:  linear-gradient(to bottom right,white,rgb(90, 219, 255),white);
+    /* background:  linear-gradient(to bottom right,white,rgb(133, 229, 255),white); */
     width: 25%;
     height: 150px;
     border-radius: 1rem;
