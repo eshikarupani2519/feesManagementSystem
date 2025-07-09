@@ -1,20 +1,8 @@
 <div class="container">
   <h1>Login</h1>
   <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-    <input
-      type="email"
-      name="email"
-      [(ngModel)]="email"
-      placeholder="email@.com"
-      required
-    />
-    <input
-      type="password"
-      name="password"
-      [(ngModel)]="password"
-      placeholder="password"
-      required
-    />
+    <input type="email" name="email" [(ngModel)]="email" placeholder="email@.com" required />
+    <input type="password" name="password" [(ngModel)]="password" placeholder="password" required />
     <button type="submit">Login</button>
   </form>
   <p>Don't have an account? <a routerLink="/signup">Sign up!</a></p>
