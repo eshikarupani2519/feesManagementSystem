@@ -1,1 +1,89 @@
-<p>register works!</p>
+<div class="container">
+  <h2>Register</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <!-- Name -->
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+      <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" style="color:red;">
+        Name is required
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" style="color:red;">
+        Enter a valid email
+      </div>
+      <div *ngIf="registerForm.hasError('emailExists')" style="color:red;">
+        Email already registered
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="form-group">
+      <label>Contact:</label>
+      <input type="text" formControlName="contact" />
+      <div *ngIf="registerForm.get('contact')?.invalid && registerForm.get('contact')?.touched" style="color:red;">
+        Enter a valid 10-digit contact number
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" formControlName="password" />
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label>Confirm Password:</label>
+      <input type="password" formControlName="confirmPassword" />
+      <div *ngIf="registerForm.hasError('mismatch') && registerForm.touched" style="color:red;">
+        Passwords do not match
+      </div>
+    </div>
+
+    <!-- Role -->
+    <div class="form-group">
+      <label>Select Role:</label>
+      <select formControlName="role">
+        <option value="">--Select Role--</option>
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <!-- Semester + Subjects (only for student) -->
+    <div class="form-group" *ngIf="isStudent">
+      <label>Select Semester:</label>
+      <select formControlName="sem" (change)="onSemChange($event)">
+        <option value="">--Select Semester--</option>
+        <option *ngFor="let sem of [1,2,3,4,5,6,7,8]" [value]="sem">Sem {{sem}}</option>
+      </select>
+    </div>
+
+    <div *ngIf="isStudent && subjectsFormArray.length > 0">
+      <h4 style="margin-top: 20px; text-align: center;">Subjects</h4>
+      <div formArrayName="subjects" class="subject-table">
+        <div class="table-header">
+          <div>Select</div>
+          <div>Subject Name</div>
+          <div>Fees (₹)</div>
+        </div>
+        <div *ngFor="let subjectCtrl of subjectsFormArray.controls; let i = index" [formGroupName]="i" class="table-row">
+          <div><input type="checkbox" formControlName="selected" /></div>
+          <div>{{ subjectCtrl.value.name }}</div>
+          <div>{{ subjectCtrl.value.fees }}</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+
+  <p>Already registered? <a routerLink="/login">Login here</a></p>
+</div>

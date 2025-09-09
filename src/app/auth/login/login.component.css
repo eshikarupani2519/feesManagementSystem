@@ -1,0 +1,98 @@
+/* === Login Form Styles (consistent with Register form) === */
+
+.container {
+  background: #D9EAF7;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #1F3B57;
+}
+
+.container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1F3B57;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1F3B57;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #1F3B57;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #fff;
+  color: #1F3B57;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #163046;
+  box-shadow: 0px 0px 5px rgba(31,59,87,0.3);
+}
+
+/* Error messages */
+.form-group div[style*="color:red"],
+div[style*="invalidCredentials"] {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Centered Submit Button */
+button[type="submit"] {
+  display: block;
+  margin: 1.5rem auto 0 auto; /* centers the button */
+  background-color: #1F3B57;
+  color: white;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #163046;
+  transform: scale(1.05);
+}
+
+button[type="submit"]:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Register Link */
+.container p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.container p a {
+  color: #1F3B57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container p a:hover {
+  text-decoration: underline;
+}

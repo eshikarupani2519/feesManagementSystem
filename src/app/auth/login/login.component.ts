@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,28 +8,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+  loginForm: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      role: ['', Validators.required]
+    });
+  }
 
   onLogin() {
-    // Basic empty-field check
-    if (!this.email || !this.password) {
-      alert('Please enter both email and password.');
-      return;
-    }
+    if (this.loginForm.invalid) return;
 
-    // Dummy credential check (replace later with real service)
-    if (this.email === 'test@example.com' && this.password === '123456') {
-      alert('Login successful!');
-      console.log('Email:', this.email);
-      console.log('Password:', this.password);
+    const { email, password, role } = this.loginForm.value;
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
 
-      // Navigate to home/dashboard if needed
-      this.router.navigate(['/home']);
+    const foundUser = users.find(
+      (u: any) => u.email === email && u.password === password && u.role === role
+    );
+
+    if (foundUser) {
+      localStorage.setItem('currentUser', JSON.stringify(foundUser));
+
+      if (foundUser.role === 'student') {
+        this.router.navigate(['/semDashboard']);
+      } else if (foundUser.role === 'admin') {
+        this.router.navigate(['/admin-dashboard']);
+      }
     } else {
-      alert('Invalid credentials!');
+      this.loginForm.setErrors({ invalidCredentials: true });
     }
   }
 }

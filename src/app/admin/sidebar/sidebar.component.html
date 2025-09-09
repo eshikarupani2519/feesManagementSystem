@@ -1,0 +1,34 @@
+<div id="sidebar" class="d-flex">
+    <div id="profile" class="d-flex">
+        <img src="assets/img/PHOTO.jpg" alt="">
+        <p>Chirag Santoshi</p>
+        <hr>
+    </div>
+    <div id="actions" class="d-flex" *ngIf="isAdminYN">
+        <div class="dropdown">
+            <button (click)="semester()" class="dropbtn">Semester<i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></button>
+            <div id="myDropdown" class="dropdown-content d-flex" *ngFor="let x of semesterArray">
+                <ng-container *ngIf="sem">
+                    <a href="">Semester {{x.index}}</a>
+                </ng-container>
+            </div>
+        </div>
+        <a href=""><p>Add Student</p></a>
+        <div class="dropdown1">
+            <button (click)="subject()" class="dropbtn">Subject<i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></button>
+            <div id="myDropdown" class="dropdown-content d-flex" *ngFor="let y of semesterArray">
+                <ng-container *ngIf="sub">
+                    <a href="">Semester {{y.index}}</a>
+                </ng-container>
+            </div>
+        </div>
+        <a href=""><p>Add Subject </p></a>
+        <a href=""><p>Admin</p></a>
+        <a href="" id="last"><p>Add Admin</p></a>
+        <a href=""><p>Log Out</p></a>
+    </div>
+    <div id="actions" *ngIf="!isAdminYN">
+        <a href=""><p  id="end">Edit Details</p></a>
+        <a href=""><p>Log Out</p></a>
+    </div>
+</div>

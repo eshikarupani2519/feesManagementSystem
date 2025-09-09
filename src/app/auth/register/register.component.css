@@ -1,0 +1,273 @@
+/* 
+.container {
+  width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.subject-table {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.table-header,
+.table-row {
+  display: contents;
+}
+
+.table-header div {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-row div {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-row:last-child div {
+  border-bottom: none;
+}
+
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+.subject-list {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.subject-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.subject-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-header div,
+.table-row div {
+  border-right: 1px solid #ccc;
+}
+
+.table-header div:last-child,
+.table-row div:last-child {
+  border-right: none;
+} */
+ /* === Register Form Styles (matches given CSS theme) === */
+
+.container {
+  background: #D9EAF7;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #1F3B57;
+}
+
+.container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1F3B57;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1F3B57;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #1F3B57;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #fff;
+  color: #1F3B57;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #163046;
+  box-shadow: 0px 0px 5px rgba(31,59,87,0.3);
+}
+
+/* Error messages */
+.form-group div[style*="color:red"] {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Centered Submit Button */
+button[type="submit"] {
+  display: block;
+  margin: 1.5rem auto 0 auto; /* 👈 centers the button */
+  background-color: #1F3B57;
+  color: white;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #163046;
+  transform: scale(1.05);
+}
+
+button[type="submit"]:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Subjects Table */
+.subject-table {
+  margin-top: 1rem;
+  border: 2px solid #1F3B57;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  align-items: center;
+  padding: 0.7rem 1rem;
+}
+
+.table-header {
+  background: #1F3B57;
+  color: white;
+  font-weight: bold;
+}
+
+.table-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row div {
+  padding: 0.3rem 0.5rem;
+}
+
+/* Login Link */
+.container p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.container p a {
+  color: #1F3B57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container p a:hover {
+  text-decoration: underline;
+}

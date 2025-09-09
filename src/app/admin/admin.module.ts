@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SemDashboardComponent } from './sem-dashboard/sem-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { SingleStudentComponent } from './single-student/single-student.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminComponent } from './admin/admin.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 @NgModule({
   declarations: [
-    SemDashboardComponent,
     StudentDashboardComponent,
-    SingleStudentComponent
+    SingleStudentComponent,
+    SidebarComponent,
+    AdminComponent,
+    SubjectsComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule
